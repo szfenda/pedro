@@ -1,0 +1,33 @@
+.pedro-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fff;
+}
+.raccoon {
+  width: 60px;
+  height: 60px;
+  background: url('/images/pedro-racoon.gif') no-repeat center/contain;
+  animation: dance 1s infinite alternate;
+  margin-bottom: 10px;
+}
+.percent {
+  font-size: 2rem;
+  color: #ff9800;
+  animation: spin 1s linear infinite;
+}
+.loader-text {
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+@keyframes dance {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-10px);}
+}
+@keyframes spin {
+  0% { transform: rotate(0);}
+  100% { transform: rotate(360deg);}
+} 
