@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/components/LanguageProvider'
 import CitySelector from '@/components/CitySelector'
 import CategorySection from '@/components/CategorySection'
@@ -10,6 +11,7 @@ import PromotionCard from '@/components/PromotionCard'
 import Image from 'next/image'
 
 export default function DiscoverPage() {
+  const router = useRouter()
   const { translations } = useLanguage()
 
   const entertainmentPromos = [
@@ -127,7 +129,10 @@ export default function DiscoverPage() {
       <div className="categories-section">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">{translations.categories}</h2>
-          <button className="text-primary font-medium">
+          <button 
+            className="text-primary font-medium"
+            onClick={() => router.push('/categories')}
+          >
             {translations.viewAll}
           </button>
         </div>
