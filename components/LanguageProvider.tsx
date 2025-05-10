@@ -47,7 +47,8 @@ const translations = {
     noFavorites: 'Nie masz jeszcze ulubionych promocji',
     selectCity: 'Wybierz miasto',
     changeLanguage: 'Zmień język',
-    settings: 'Ustawienia'
+    settings: 'Ustawienia',
+    nearYou: 'Blisko Ciebie'
   },
   en: {
     discover: 'Discover',
@@ -85,7 +86,8 @@ const translations = {
     noFavorites: 'You don\'t have any favorite promotions yet',
     selectCity: 'Select City',
     changeLanguage: 'Change Language',
-    settings: 'Settings'
+    settings: 'Settings',
+    nearYou: 'Near You'
   }
 }
 

@@ -6,12 +6,14 @@ import { useLanguage } from './LanguageProvider'
 
 export default function CitySelector() {
   const { translations } = useLanguage()
-  const [selectedCity, setSelectedCity] = useState('Blisko Ciebie')
+  // Używamy translations.nearYou do inicjalizacji i jako identyfikatora
+  const nearYouText = translations.nearYou || 'Blisko Ciebie' 
+  const [selectedCity, setSelectedCity] = useState(nearYouText)
   const [isOpen, setIsOpen] = useState(false)
   const [userCoords, setUserCoords] = useState<{lat: number, lng: number} | null>(null)
 
   const cities = [
-    'Blisko Ciebie',
+    nearYouText,
     'Warszawa',
     'Kraków',
     'Gdańsk',
@@ -25,7 +27,11 @@ export default function CitySelector() {
   ]
 
   useEffect(() => {
-    if (selectedCity === 'Blisko Ciebie' && !userCoords) {
+    // Aktualizujemy selectedCity, jeśli zmienił się język, a wybrane jest "Blisko Ciebie"
+    if (selectedCity === cities[0] && selectedCity !== nearYouText) {
+      setSelectedCity(nearYouText)
+    }
+    if (selectedCity === nearYouText && !userCoords) {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (pos) => setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
@@ -54,7 +60,7 @@ export default function CitySelector() {
               key={city}
               onClick={() => {
                 setSelectedCity(city)
-                if (city === 'Blisko Ciebie') {
+                if (city === nearYouText) {
                   setUserCoords(null)
                   if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
