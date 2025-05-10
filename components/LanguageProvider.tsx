@@ -46,7 +46,8 @@ const translations = {
     distance: 'Odległość',
     noFavorites: 'Nie masz jeszcze ulubionych promocji',
     selectCity: 'Wybierz miasto',
-    changeLanguage: 'Zmień język'
+    changeLanguage: 'Zmień język',
+    settings: 'Ustawienia'
   },
   en: {
     discover: 'Discover',
@@ -83,7 +84,8 @@ const translations = {
     distance: 'Distance',
     noFavorites: 'You don\'t have any favorite promotions yet',
     selectCity: 'Select City',
-    changeLanguage: 'Change Language'
+    changeLanguage: 'Change Language',
+    settings: 'Settings'
   }
 }
 
